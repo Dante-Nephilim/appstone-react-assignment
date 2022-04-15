@@ -1,14 +1,23 @@
-import { useState } from "react";
+import { Stack } from "@mui/material";
 import "./App.css";
 import UserList from "./UserList";
 
 function App() {
-  const [count, setCount] = useState(0);
-
   return (
-    <div className="App">
-      <header className="App-header"></header>
+    <div
+      style={{
+        maxWidth: "760px",
+        margin: "4em auto",
+      }}
+    >
+      {/* <Stack
+      direction="row"
+      justifyContent="center"
+      alignItems="center"
+      spacing={2}
+    > */}
       <UserList />
+      {/* </Stack> */}
     </div>
   );
 }
