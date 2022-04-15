@@ -1,5 +1,9 @@
 import { useEffect, useState } from "react";
+import List from "@mui/material/List";
 import User from "./User";
+import { Button } from "@mui/material";
+import RestartAltIcon from "@mui/icons-material/RestartAlt";
+import { flexbox } from "@mui/system";
 
 export default function UserList() {
   const [data, setData] = useState<any>();
@@ -47,18 +51,26 @@ export default function UserList() {
   }
 
   return (
-    <>
-      <button
-        onClick={() => {
-          fetchUserList();
-        }}
+    <div>
+      <div style={{ display: "flex", justifyContent: "center" }}>
+        <Button
+          variant="outlined"
+          startIcon={<RestartAltIcon />}
+          onClick={() => {
+            fetchUserList();
+          }}
+        >
+          Reset
+        </Button>
+      </div>
+      <List
+        sx={{ width: "100%", maxWidth: "760px", bgcolor: "background.paper" }}
       >
-        Reset
-      </button>
-      {data &&
-        data.map((user: any) => {
-          return <User key={user.id} deleteUser={deleteUser} {...user} />;
-        })}
-    </>
+        {data &&
+          data.map((user: any) => {
+            return <User key={user.id} deleteUser={deleteUser} {...user} />;
+          })}
+      </List>
+    </div>
   );
 }
