@@ -3,7 +3,7 @@ import List from "@mui/material/List";
 import User from "./User";
 import { Button } from "@mui/material";
 import RestartAltIcon from "@mui/icons-material/RestartAlt";
-import { flexbox } from "@mui/system";
+import { flexbox, margin } from "@mui/system";
 
 export default function UserList() {
   const [data, setData] = useState<any>();
@@ -52,6 +52,20 @@ export default function UserList() {
 
   return (
     <div>
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "center",
+          marginBottom: "2em",
+        }}
+      >
+        <a
+          href="https://github.com/Dante-Nephilim/appstone-react-assignment"
+          target="_blank"
+        >
+          GitHub Link
+        </a>
+      </div>
       <div style={{ display: "flex", justifyContent: "center" }}>
         <Button
           variant="outlined"
